@@ -1,7 +1,7 @@
 FROM node:13.12.0-alpine as build
 WORKDIR /app
 COPY . .
-RUN yarn install
+RUN yarn --ignore-engines 
 RUN yarn build
 # production environment
 FROM nginx:stable-alpine
